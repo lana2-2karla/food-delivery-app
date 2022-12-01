@@ -1,5 +1,5 @@
-const userSchema = (sequelize, DataTypes) => {
-  const userTable = sequelize.define('Shop', {
+const shopSchema = (sequelize, DataTypes) => {
+  const shopTable = sequelize.define('Shop', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -32,7 +32,7 @@ const userSchema = (sequelize, DataTypes) => {
     }
   }, { timestamps: false })
 
-  return userTable
+  return shopTable
 }
 
-module.exports = userSchema
+module.exports = shopSchema
