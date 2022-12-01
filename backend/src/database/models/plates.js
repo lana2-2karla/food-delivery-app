@@ -28,6 +28,13 @@ const plateSchema = (sequelize, DataTypes) => {
     }
   }, { timestamps: false })
 
+  plateTable.associate = (models) => {
+    plateTable.belongsTo(models.Shops, {
+      foreignKey: 'shopId',
+      onDelete: 'CASCADE'
+    })
+  }
+
   return plateTable
 }
 
