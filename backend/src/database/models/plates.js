@@ -1,4 +1,4 @@
-const userSchema = (sequelize, DataTypes) => {
+const plateSchema = (sequelize, DataTypes) => {
   const plateTable = sequelize.define('Plate', {
     id: {
       type: DataTypes.INTEGER,
@@ -31,4 +31,4 @@ const userSchema = (sequelize, DataTypes) => {
   return plateTable
 }
 
-module.exports = userSchema
+module.exports = plateSchema
