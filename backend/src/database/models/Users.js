@@ -1,12 +1,12 @@
-const userSchema = (sequelize, DataTypes) => {
-  const userTable = sequelize.define('User', {
+const UserSchema = (sequelize, DataTypes) => {
+  const UserTable = sequelize.define('Users', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
       primaryKey: true
     },
-    displayName: {
+    firstName: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -20,7 +20,7 @@ const userSchema = (sequelize, DataTypes) => {
     }
   }, { timestamps: false })
 
-  return userTable
+  return UserTable
 }
 
-module.exports = userSchema
+module.exports = UserSchema
