@@ -1,5 +1,5 @@
-const plateSchema = (sequelize, DataTypes) => {
-  const plateTable = sequelize.define('Plate', {
+const PlateSchema = (sequelize, DataTypes) => {
+  const PlateTable = sequelize.define('Plates', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -31,14 +31,14 @@ const plateSchema = (sequelize, DataTypes) => {
     }
   }, { timestamps: false })
 
-  plateTable.associate = (models) => {
-    plateTable.belongsTo(models.Shops, {
+  PlateTable.associate = (models) => {
+    PlateTable.belongsTo(models.Shops, {
       foreignKey: 'shopId',
       onDelete: 'CASCADE'
     })
   }
 
-  return plateTable
+  return PlateTable
 }
 
-module.exports = plateSchema
+module.exports = PlateSchema
