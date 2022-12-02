@@ -1,8 +1,8 @@
-const { User } = require('../database/models')
+const { Users } = require('../database/models')
 const { bcrypt } = require('bcrypt')
 
 const createUserService = async (userData) => {
-  const userExists = await User.findOne({
+  const userExists = await Users.findOne({
     where: {
       email: userData.email
     }
@@ -13,7 +13,7 @@ const createUserService = async (userData) => {
   // segundo parâmetro é o nível de processamento do pc p/ gerar a hash
   const hashPassword = await bcrypt.hash(userData.password, 10)
 
-  const userCreated = await User.create({
+  const userCreated = await Users.create({
     firstName: userData.firstName,
     email: userData.email,
     password: hashPassword
