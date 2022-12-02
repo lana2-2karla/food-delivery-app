@@ -12,7 +12,10 @@ const plateSchema = (sequelize, DataTypes) => {
     },
     ingredients: {
       allowNull: false,
-      type: DataTypes.JSON
+      type: DataTypes.STRING,
+      get () {
+        return this.getDataValue('ingredients').split(',')
+      }
     },
     value: {
       allowNull: false,
