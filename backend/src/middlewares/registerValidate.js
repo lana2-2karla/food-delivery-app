@@ -17,6 +17,4 @@ const validateSchema = (req, _res, next) => {
   next()
 }
 
-module.exports = {
-  validateSchema
-}
+module.exports = validateSchema
