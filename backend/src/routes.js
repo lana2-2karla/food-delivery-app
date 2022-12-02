@@ -5,8 +5,8 @@ const authUser = require('./middlewares/registerValidate')
 
 const router = Router()
 
-router.post('/login', loginController())
+router.post('/login', loginController)
 
-router.post('/user', authUser, createUserController())
+router.post('/user', authUser, createUserController)
 
 module.exports = router
