@@ -1,5 +1,5 @@
-const shopSchema = (sequelize, DataTypes) => {
-  const shopTable = sequelize.define('Shop', {
+const ShopSchema = (sequelize, DataTypes) => {
+  const ShopTable = sequelize.define('Shops', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -32,7 +32,7 @@ const shopSchema = (sequelize, DataTypes) => {
     }
   }, { timestamps: false })
 
-  return shopTable
+  return ShopTable
 }
 
-module.exports = shopSchema
+module.exports = ShopSchema
