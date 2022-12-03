@@ -4,19 +4,19 @@ module.exports = {
       [{
         firstName: 'Fred',
         email: 'fred@graodireto.com.br',
-        password: '$2a$12$u/J3Gb/.5Lzi/oUwTzOG3eEgbtej1C4G84fY2./hqa3AbsV/3/Pda'
+        password: '$2b$10$GnsDQXgt1iApv/Lbs3ao..545U1DPjScKJ4RPyRc4TU/13mHZnvom'
         // 123Fred@
       },
       {
         firstName: 'Lana',
         email: 'lana@graodireto.com.br',
-        password: '$2a$12$AYyPh6MCF5/3jxk0UzJgNOIrHSScybbAOVi5yeR8alVlkF87Wv5.q'
+        password: '$2b$10$LpqZrWiN58AAFai5TPOGDerbtl.jsAxa8mi0ZnORdWAGMdp7ptfjC'
         // 123Lana@
       },
       {
         firstName: 'Nessa',
         email: 'nessa@graodireto.com.br',
-        password: '$2a$12$y8YIFbvLuWG52E4BCkqbH.t6WMGzY3RCYLFv1PxLEKKRJOO3LreEm'
+        password: '$2b$10$oGXuzJJe2UnxliBuWR1imOp.HQD8VsmdMYBuNf7O8ZjlauoeUaphu'
         // 123Nessa@
       }
       ], { timestamps: false })
