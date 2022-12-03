@@ -1,21 +1,21 @@
-const { User } = require('../database/models')
-const { bcrypt } = require('bcrypt')
+const { Users } = require('../database/models')
+const bcrypt = require('bcrypt')
 const { generateToken } = require('../helpers/jwtToken')
 
 const loginservice = async (userData) => {
-  const userExists = await User.findOne({
+  const userExists = await Users.findOne({
     where: {
       email: userData.email
     }
   })
   const status = { status: 400, message: 'User does not exist' }
-  if (!userExists) throw status
+  if (!userExists) return status
 
   const passDecripted = await bcrypt.compare(userData.password, userExists.password)
 
   const status2 = { status: 401, message: 'Unauthorized' }
 
-  if (!passDecripted) throw status2
+  if (!passDecripted) return status2
 
   const { id, firstname, email } = userExists
 
