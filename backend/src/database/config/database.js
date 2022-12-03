@@ -8,8 +8,6 @@ module.exports = {
   password: process.env.DB_PASS,
   database: 'food-delivery',
   define: {
-    timestamp: true,
-    // todas as tabelas com letra maiuscula
-    underscored: true
+    timestamp: true
   }
 }
