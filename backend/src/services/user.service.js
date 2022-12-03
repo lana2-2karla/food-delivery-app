@@ -2,7 +2,6 @@ const { Users } = require('../database/models')
 const bcrypt = require('bcrypt')
 
 const createUserService = async (userData) => {
-  console.log('cheguei no service')
   const userExists = await Users.findOne({
     where: {
       email: userData.email
