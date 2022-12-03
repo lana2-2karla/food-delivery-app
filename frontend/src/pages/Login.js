@@ -1,6 +1,6 @@
 function Login() {
     return (
-      <div>Hello World</div>
+      <h1 className="bg-fuchsia-800">Hello world!</h1>
     );
   }
   
