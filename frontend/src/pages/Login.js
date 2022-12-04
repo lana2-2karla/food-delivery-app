@@ -1,17 +1,27 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import loginImg from '../assets/login1.jpg'
+import { authEmail, authPassword } from '../utils/validators'
 
 function Login () {
   const [isDisable, setIsDisable] = useState('true')
+  const [form, setForm] = useState([])
 
   const handleChange = (event) => {
-    console.log('digitando...', event.target.value)
+    setForm({ ...form, [event.target.name]: event.target.value })
+    console.log('Formmmm', form)
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    setIsDisable(true)
   }
+
+  const validationInput = () => {
+    return authEmail(form.email) && authPassword(form.password)
+  }
+
+  console.log('Form está válido?', validationInput())
 
   return (
     <section className="bg-gray-50 min-h-screen flex items-center justify-center">
@@ -49,7 +59,7 @@ function Login () {
             className="bg-[#411901] rounded-xl text-white py-2 hover:scale-105 duration-300"
             type="submit"
             onClick={handleSubmit}
-            disabled={isDisable}
+            disabled={isDisable === true || !validationInput()}
             >
               Login
             </button>
