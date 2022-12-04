@@ -1,20 +1,30 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react'
 import loginImg from '../assets/login1.jpg'
+import UserServices from '../services/userService'
 import { authEmail, authPassword } from '../utils/validators'
 
 function Login () {
   const [isDisable, setIsDisable] = useState('true')
   const [form, setForm] = useState([])
+  const userServices = new UserServices()
 
   const handleChange = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value })
-    console.log('Formmmm', form)
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    setIsDisable(true)
+    try {
+      const response = await userServices.login(form)
+      console.log('response do Login', response)
+      if (response === true) {
+        alert('usuário Logado com Sucesso')
+      }
+      setIsDisable(false)
+    } catch (err) {
+      alert('Algo deu errado com o Login' + err)
+    }
   }
 
   const validationInput = () => {
