@@ -12,10 +12,9 @@ export default class UserServices {
       password: dados.password
     })
       .then(function (response) {
-        console.log(response)
         localStorage.setItem('email', dados.email)
         localStorage.setItem('password', dados.password)
-        localStorage.setItem('token', response)
+        localStorage.setItem('token', response.data)
       })
       .catch(function (error) {
         console.error(error)
