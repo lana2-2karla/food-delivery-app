@@ -1,8 +1,9 @@
 import React from 'react'
+import Header from '../components/header'
 
 function Shops () {
   return (
-    <h3>Shopppsss</h3>
+    <Header />
   )
 }
 export default Shops
