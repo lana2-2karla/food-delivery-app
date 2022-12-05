@@ -3,11 +3,13 @@ import React, { useState } from 'react'
 import loginImg from '../assets/login1.jpg'
 import UserServices from '../services/userService'
 import { authEmail, authPassword } from '../utils/validators'
+import { useNavigate } from 'react-router-dom'
 
 function Login () {
-  const [isDisable, setIsDisable] = useState('true')
+  // const [isDisable, setIsDisable] = useState('true')
   const [form, setForm] = useState([])
   const userServices = new UserServices()
+  const navigate = useNavigate()
 
   const handleChange = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value })
@@ -17,21 +19,17 @@ function Login () {
     event.preventDefault()
     try {
       const response = await userServices.login(form)
-      console.log('response do Login', response)
       if (response === true) {
-        alert('usuário Logado com Sucesso')
+        navigate('/shops')
       }
-      setIsDisable(false)
     } catch (err) {
-      alert('Algo deu errado com o Login' + err)
+      alert('email ou senha incorreta')
     }
   }
 
   const validationInput = () => {
     return authEmail(form.email) && authPassword(form.password)
   }
-
-  console.log('Form está válido?', validationInput())
 
   return (
     <section className="bg-gray-50 min-h-screen flex items-center justify-center">
@@ -69,7 +67,7 @@ function Login () {
             className="bg-[#411901] rounded-xl text-white py-2 hover:scale-105 duration-300"
             type="submit"
             onClick={handleSubmit}
-            disabled={isDisable === true || !validationInput()}
+            disabled={!validationInput()}
             >
               Login
             </button>
