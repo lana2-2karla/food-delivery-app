@@ -13,11 +13,11 @@ export default class UserServices {
     })
       .then(function (response) {
         localStorage.setItem('email', dados.email)
-        localStorage.setItem('password', dados.password)
         localStorage.setItem('token', response.data)
       })
       .catch(function (error) {
         console.error(error)
       })
+    return true
   }
 }
