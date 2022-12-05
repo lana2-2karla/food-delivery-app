@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../components/header'
+import ShopCard from '../components/shopCard'
 
 function Shops () {
   return (
@@ -11,6 +12,7 @@ function Shops () {
         type="text" name="search"
         placeholder="search"
       />
+      <ShopCard />
       </div>
     </div>
   )
