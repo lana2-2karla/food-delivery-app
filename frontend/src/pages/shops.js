@@ -5,6 +5,8 @@ import axios from 'axios'
 
 function Shops () {
   const [platesShops, setPlatesShops] = useState('')
+  const [search, setSearch] = useState('')
+
   useEffect(() => {
     axios.get('http://localhost:3001/plates').then((response) => {
       setPlatesShops(response.data)
@@ -22,8 +24,11 @@ function Shops () {
         className="p-2 mt-8 rounded-xl w-3/5 border-color: rgb(0 0 0) border-2"
         type="text" name="search"
         placeholder="search"
+        onChange={(e) => setSearch(e.target.value)}
       />
-      <ShopCard/>
+      <ShopCard
+      platesShopsAll={platesShops}
+      searchValue={search}/>
       </div>
     </div>
   )
