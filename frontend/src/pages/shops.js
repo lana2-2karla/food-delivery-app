@@ -1,20 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Header from '../components/header'
 import ShopCard from '../components/shopCard'
-import axios from 'axios'
 
 function Shops () {
-  const [platesShops, setPlatesShops] = useState('')
   const [search, setSearch] = useState('')
-
-  useEffect(() => {
-    axios.get('http://localhost:3001/plates').then((response) => {
-      setPlatesShops(response.data)
-    })
-      .catch((error) => {
-        console.error('Error fetching data', error)
-      })
-  }, [])
 
   return (
     <div>
@@ -27,7 +16,6 @@ function Shops () {
         onChange={(e) => setSearch(e.target.value)}
       />
       <ShopCard
-      platesShopsAll={platesShops}
       searchValue={search}/>
       </div>
     </div>
