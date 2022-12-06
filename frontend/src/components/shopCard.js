@@ -17,7 +17,7 @@ function ShopCard (props) {
         infoFood.name.toLowerCase().includes(searchValue.toLowerCase()) ||
         infoFood.Shop.description.toLowerCase().includes(searchValue.toLowerCase()))
         .map((data, index) => (
-          <div key={index} className="md:flex rounded-xl md:m-5 shadow-xl">
+          <div key={index} className="md:flex rounded-xl md:m-5 flex shadow-lg">
               <div className="md:shrink-0">
                   <img className="h-28 w-full object-cover md:h-full md:w-48 " src={data.Shop.urlImage} alt="foodImage"/>
               </div>
