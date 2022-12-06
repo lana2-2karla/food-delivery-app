@@ -1,7 +1,14 @@
-function ShopCard () {
+import { FoodContext } from '../contexts/foodContext'
+import React, { useContext } from 'react'
+
+/* eslint-disable react/prop-types */
+function ShopCard (props) {
+  const { food } = useContext(FoodContext)
+
   return (
     <div className="min-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl p-10">
-        <div className="md:flex rounded-xl">
+      {food.map((data, index) => (
+        <div key={index} className="md:flex rounded-xl">
             <div className="md:shrink-0">
                 <img className="h-28 w-full object-cover md:h-full md:w-48 " src="https://www.wbcsd.org/var/site/storage/images/media/images/fresh_pa/80809-2-eng-GB/FRESH_PA_i1140.jpg" alt="Modern building architecture"/>
             </div>
@@ -11,6 +18,8 @@ function ShopCard () {
                 <p className="mt-2 text-slate-500">4.3 - 30-20m - $3,00</p>
             </div>
        </div>
+      ))
+      }
     </div>
   )
 }
