@@ -6,9 +6,13 @@ function ShopCard (props) {
   const { searchValue } = props
   const { food } = useContext(FoodContext)
 
+  const uniquesFood = food.filter(function (item) {
+    return !this[JSON.stringify(item.Shop)] && (this[JSON.stringify(item.Shop)] = true)
+  }, Object.create(null))
+
   return (
     <div className="min-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl p-10">
-      {food
+      {uniquesFood
         .filter((infoFood) => infoFood.Shop.name.includes(searchValue)).map((data, index) => (
           <div key={index} className="md:flex rounded-xl">
               <div className="md:shrink-0">
