@@ -20,4 +20,14 @@ export default class UserServices {
       })
     return true
   }
+  // Não funcionou :(
+  /* plates () {
+    axios.get(`${this.baseUrl}/plates`).then((response) => {
+      console.log('responseeeee', response.data)
+      return response.data
+    })
+      .catch((error) => {
+        console.error('Error fetching data', error)
+      })
+  } */
 }
