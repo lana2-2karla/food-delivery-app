@@ -8,16 +8,16 @@ function Shops () {
   return (
     <div>
       <Header />
-      <div className="md:flex items-center">
+      <div className="flex justify-center items-center">
       <input
-        className="p-2 mt-8 rounded-xl w-3/5 border-color: rgb(0 0 0) border-2"
+        className="p-2 mt-8 rounded-2xl w-4/5 border-color: rgb(0 0 0) border-2"
         type="text" name="search"
-        placeholder="search"
+        placeholder="Search by dish, restaurant or description"
         onChange={(e) => setSearch(e.target.value)}
       />
+      </div>
       <ShopCard
       searchValue={search}/>
-      </div>
     </div>
   )
 }
