@@ -6,7 +6,7 @@ function ShopCardDetails (props) {
   return (
         <div className="md:flex rounded-xl md:m-5 flex shadow-lg flex-col">
               <div className="flex justify-center">
-                  <img className="md:flex md:w-2/3 md:h-96 md:p-3" src={shop.urlImage} alt="foodImage"/>
+                  <img className="md:flex md:w-2/3 md:h-96 md:p-3 h-32 w-full" src={shop.urlImage} alt="foodImage"/>
               </div>
               <div className="p-8 md:flex md:flex-col flex md:p-8 md:relative">
                 <div className="md:absolute top-1 left-80 inset-0">
