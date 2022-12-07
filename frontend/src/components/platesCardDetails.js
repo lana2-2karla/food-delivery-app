@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 
-function PlateCardDetail (props) {
+function PlateCardDetails (props) {
   const { plates } = props
 
   return (
-      <div className="flex shadow-lg md:shadow-lg md:pl-72 md:pt-10 pt-10">
+      <div className="flex md:flex shadow-lg md:shadow-xl md:pl-72 md:pt-10 pt-10">
                 <div className="absolute md:pl-10 pl-10">
                     <h3 className=" text-xl">Pratos Executivos:</h3>
                 </div>
@@ -24,4 +24,4 @@ function PlateCardDetail (props) {
     </div>
   )
 }
-export default PlateCardDetail
+export default PlateCardDetails
