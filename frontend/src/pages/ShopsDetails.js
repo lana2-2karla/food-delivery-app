@@ -6,12 +6,11 @@ import ShopCardDetails from '../components/shopCardDetails'
 function ShopDetails () {
   const location = useLocation()
   const data = location.state.data
-  console.log(data, 'dataaaaaaaa')
 
   return (
     <div>
       <Header />
-      <ShopCardDetails />
+      <ShopCardDetails shop={data.Shop} />
     </div>
   )
 }
