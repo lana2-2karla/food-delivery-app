@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/header'
 import { useLocation } from 'react-router-dom'
+import ShopCardDetails from '../components/shopCardDetails'
 
 function ShopDetails () {
   const location = useLocation()
@@ -10,6 +11,7 @@ function ShopDetails () {
   return (
     <div>
       <Header />
+      <ShopCardDetails />
     </div>
   )
 }
