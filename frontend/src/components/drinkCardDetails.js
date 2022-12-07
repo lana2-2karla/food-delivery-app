@@ -1,6 +1,6 @@
 import React from 'react'
 
-function DrinkCardDetail () {
+function DrinkCardDetails () {
   return (
       <div className="mx-auto bg-white p-10 md:pl-72 md:pt-10">
         <div>
@@ -23,4 +23,4 @@ function DrinkCardDetail () {
       </div>
   )
 }
-export default DrinkCardDetail
+export default DrinkCardDetails
