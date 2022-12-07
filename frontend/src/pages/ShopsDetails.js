@@ -2,8 +2,8 @@ import React from 'react'
 import Header from '../components/header'
 import { useLocation } from 'react-router-dom'
 import ShopCardDetails from '../components/shopCardDetails'
-import PlateCardDetail from '../components/platesCard'
-import DrinkCardDetail from '../components/drinkCard'
+import PlateCardDetails from '../components/platesCardDetails'
+import DrinkCardDetails from '../components/drinkCardDetails'
 
 function ShopDetails () {
   const location = useLocation()
@@ -13,8 +13,8 @@ function ShopDetails () {
     <div>
       <Header />
       <ShopCardDetails shop={data.Shop} />
-      <PlateCardDetail plates={data}/>
-      <DrinkCardDetail />
+      <PlateCardDetails plates={data}/>
+      <DrinkCardDetails />
     </div>
   )
 }
