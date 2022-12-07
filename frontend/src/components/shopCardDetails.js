@@ -1,6 +1,9 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 
-function ShopCardDetails () {
+function ShopCardDetails (props) {
+  const { shop } = props
+  console.log(shop)
   return (
     <div>
         <p> Card restaurante</p>
