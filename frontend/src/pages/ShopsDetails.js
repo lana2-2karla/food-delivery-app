@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../components/header'
 import { useLocation } from 'react-router-dom'
 import ShopCardDetails from '../components/shopCardDetails'
+import PlateCardDetail from '../components/platesCard'
 
 function ShopDetails () {
   const location = useLocation()
@@ -11,6 +12,7 @@ function ShopDetails () {
     <div>
       <Header />
       <ShopCardDetails shop={data.Shop} />
+      <PlateCardDetail />
     </div>
   )
 }
