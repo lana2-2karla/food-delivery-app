@@ -12,7 +12,7 @@ function ShopDetails () {
     <div>
       <Header />
       <ShopCardDetails shop={data.Shop} />
-      <PlateCardDetail />
+      <PlateCardDetail plates={data}/>
     </div>
   )
 }
