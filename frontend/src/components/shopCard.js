@@ -1,5 +1,6 @@
 import { FoodContext } from '../contexts/foodContext'
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 /* eslint-disable react/prop-types */
 function ShopCard (props) {
@@ -23,7 +24,9 @@ function ShopCard (props) {
               </div>
               <div className="p-8">
                 <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{data.Shop.name}</div>
-                  <a href="#" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{data.Shop.description}</a>
+                <Link to="/shopsDetails" state={{ data }} className="link">
+                  <h2 className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{data.Shop.description}</h2>
+                </Link>
                   <div className="flex items-stretch md:items-center">
                   <img className="h-2 position: relative top-3.5 md:relative md:top-1.5" src='https://cdn-icons-png.flaticon.com/512/148/148841.png' alt="startIcons"/>
                   <p className="mt-2 text-slate-500">{data.Shop.rating} - {data.Shop.deliveryTime}m - ${data.Shop.deliveryValue}</p>
