@@ -12,7 +12,7 @@ function Shops () {
       <input
         className="p-2 mt-8 rounded-2xl w-4/5 border-color: rgb(0 0 0) border-2"
         type="text" name="search"
-        placeholder="Search by dish, restaurant or description"
+        placeholder="Pesquise por prato, restaurante ou descrição"
         onChange={(e) => setSearch(e.target.value)}
       />
       </div>
