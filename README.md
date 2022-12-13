@@ -5,7 +5,7 @@
 
 Simulação de um e-commerce de comidas <strong>fullstack</strong> <strong>responsivo</strong>, onde é possível filtrar pelo nome do restaurante, pela descrição e prato. 
 
-Back-end: A api foi construída utilizando <strong>MySQL</strong> e <strong>sequelize</strong>, no modelo <strong>MSC</strong>(model, service e controller).
+Back-end: A api foi construída utilizando <strong>MySQL</strong> e <strong>Sequelize</strong>, no modelo <strong>MSC</strong>(model, service e controller).
 Sendo a model responsável pelo banco de dados, service pelas regras de negócio, e controller por lidar com as requisições e respostas.
 
 Front-end: A aplicação foi construída com <strong>React</strong> e <strong>Context API</strong>. Foi utilizado <strong>Axios</strong>, um cliente HTTP baseado em Promises para realizar as requisições ao back.
