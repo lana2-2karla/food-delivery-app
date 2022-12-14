@@ -1,25 +1,36 @@
 version: '3'
-services:
 
-    app:
-        container_name: backend
-        restart: always
-        build: ./backend
-        ports:
-            - "3001:3001"
-        environment:
-            APP_PORT: 3001
-            DB_PORT: 3306
-            DB_USER: root
-            DB_PASSWORD: password
-            DB_HOST: 127.0.0.1
-            JWT_SECRET: senhasuperhipermegasecreta
-        depends_on:
-            - db
-        volumes:
-            - './:/usr/src/backend'
-        links:
-            - db
+services:
+  db:
+    container_name: mysql
+    image: mysql:8.0.21
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - web-net
+
+  app:
+    container_name: backend
+    restart: always
+    build: ./backend
+    ports:
+      - "3001:3001"
+    environment:
+        APP_PORT: 3001
+        DB_PORT: 3306
+        DB_USER: root
+        DB_PASSWORD: password
+        DB_HOST: 127.0.0.1
+        JWT_SECRET: senhasuperhipermegasecreta
+    depends_on:
+      - db
+    volumes:
+      - './:/usr/src/backend'
+    networks:
+      - web-net
     
     # app2:
     #     container_name: frontend
@@ -28,11 +39,6 @@ services:
     #     ports:
     #         - "3000:3000"
 
-    db:
-      container_name: mysql
-      image: mysql:8.0.21
-      restart: always
-      ports:
-        - 3306:3306
-      environment:
-        MYSQL_ROOT_PASSWORD: password
+networks:
+  web-net:
+    name: web-net
